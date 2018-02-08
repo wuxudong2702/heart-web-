@@ -7,14 +7,14 @@ import{ApiServeService}from '../../serve/api-serve/api-serve.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http:ApiServeService) { console.log('000');}
+  constructor(private http:ApiServeService) {  }
 
   ngOnInit() {
     
     //  
   }
   homeGetData(){
-    console.log('========');
+     
     this.http.getData();
   } 
 }

@@ -20,4 +20,20 @@ export class ApiServeService {
         return Promise.reject(error);
       })
   }
+  login(): Promise<any> {
+    const url: string = '/api/admin/auth/login';
+    console.log('api-serve login');
+    return this.http.post(url, {
+      name:'admin',
+      password:'admin',
+    })
+      .toPromise()
+      .then(data => {
+        console.log('data',data);
+        return data;
+      })
+      .catch((error: any): Promise<any>=>{
+        return Promise.reject(error);
+      })
+  }
 }

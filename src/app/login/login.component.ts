@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
  
 import {Router} from '@angular/router';
 import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
+import{ApiServeService}from '../serve/api-serve/api-serve.service'
 
  
 
@@ -13,7 +14,7 @@ import {Validators, FormControl, FormGroup, FormBuilder} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(  ) {
+  constructor(private http:ApiServeService  ) {
     
   }
 
@@ -24,13 +25,13 @@ export class LoginComponent implements OnInit {
 
   }
 
-
+  //  data:
   /**
    * 登录
    */
   login() {
    
-       
+ console.log('-----',this.http.login());
     
           // this.router.navigate(['/app/home']);
        

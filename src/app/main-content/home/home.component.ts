@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import{ApiServeService}from '../../serve/api-serve/api-serve.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { console.log('000');}
+  constructor(private http:ApiServeService) { console.log('000');}
 
   ngOnInit() {
+    
+    //  
   }
-
+  homeGetData(){
+    console.log('========');
+    this.http.getData();
+  } 
 }

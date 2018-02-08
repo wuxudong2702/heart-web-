@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
  
 import { PageNotFoundComponent } from './error-page/page-not-found/page-not-found.component';
 // import { HomeComponent } from './main-content/home/home.component';
- 
-
-
+ import {ApiServeService} from './serve/api-serve/api-serve.service'
+ import {HttpClient} from '@angular/common/http';
+ import {HttpModule} from '@angular/http';
+ import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +21,15 @@ import { PageNotFoundComponent } from './error-page/page-not-found/page-not-foun
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [SelectivePreloadingStrategy],
+  providers: [
+    SelectivePreloadingStrategy,
+    ApiServeService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
